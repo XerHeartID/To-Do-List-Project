@@ -41,6 +41,7 @@ h2{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    min-width: 314px;
 }
 
 .addTask input[type="text"], .addTask input[type="date"]{

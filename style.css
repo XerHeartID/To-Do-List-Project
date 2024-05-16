@@ -1,0 +1,80 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+h2{
+    border-radius: 5px;
+}
+
+.user{
+    justify-content: space-between;
+    margin: 10px 15px;
+}
+
+.name{
+    margin: 0px 15px;
+}
+
+.profile, .user{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.addTask{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.addTask input[type="text"], .addTask input[type="date"]{
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addTask button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addTask button:hover{
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}

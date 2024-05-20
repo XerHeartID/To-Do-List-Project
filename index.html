@@ -13,17 +13,17 @@
         <div class="user">
             <div class="profile">
                 <img src="assets/profile.png" alt="" width="50px" height="50px">
-                <span class="name">Theodore Johnson</span>
+                <span class="name" id="username">Theodore Johnson</span>
             </div>
-            <span class="score">My Score: 100</span>
+            <p>My Score: <span id="score">100</span></p>
         </div>
     
         <hr>
     
         <div class="addTask">
-            <input type="text" id="textInput" placeholder="Add new...">
+            <input type="text" id="taskInput" placeholder="Add new...">
             <input type="date" id="dateInput">
-            <button>Add</button>
+            <button onclick="addTask()">Add</button>
         </div>
     
         <h2 style="background-color: rgb(255, 221, 68);">Ongoing Tasks</h2>
@@ -36,9 +36,6 @@
                 </tr>
             </thead>
             <tbody id="taskList">
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
             </tbody>
         </table>
 
@@ -52,9 +49,6 @@
                 </tr>
             </thead>
             <tbody id="completedList">
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
             </tbody>
         </table>
 
@@ -67,8 +61,6 @@
                 </tr>
             </thead>
             <tbody id="deletedList">
-                <td>x</td>
-                <td>x</td>
             </tbody>
         </table>
 
@@ -82,9 +74,6 @@
                 </tr>
             </thead>
             <tbody id="editedList">
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
             </tbody>
         </table>
     </div>

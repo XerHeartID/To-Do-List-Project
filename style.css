@@ -82,3 +82,37 @@ th, td {
 tr th{
     background-color: #ccc;
 }
+
+button.edit, button.delete, button.complete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+button.complete {
+    background-color: #28a745;
+    color: white;
+}
+
+button.complete:hover {
+    background-color: #218838;
+}

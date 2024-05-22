@@ -26,32 +26,58 @@ function addTask() {
   taskInput.value = "";
   dateInput.value = "";
 
-  renderTasks();
+  renderNewTasks();
 }
 
-function renderTasks() {
-  if (tasks.length <= 0) {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-  }
-
-  const taskList = document.getElementById("taskList");
-  taskList.innerHTML = "";
-
-  console.log(tasks);
-  tasks.forEach((task) => {
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-            <td>${task.name}</td>
-            <td>${task.date}</td>
-            <td>
-                <button class="complete" onclick="completeTask(${task.id})">Complete</button>
+function renderNewTasks() {
+    if (tasks.length < 0) {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+    
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+    
+    console.log(tasks);
+    tasks.forEach((task) => {
+        const row = document.createElement("tr");
+        
+        row.innerHTML = `
+        <td>${task.name}</td>
+        <td>${task.date}</td>
+        <td>
+        <button class="complete" onclick="completeTask(${task.id})">Complete</button>
                 <button class="edit" onclick="editTask(${task.id})">Edit</button>
                 <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
-            </td>
+                </td>
         `;
 
     taskList.appendChild(row);
   });
+}
+
+function renderTasks() {
+    if (tasks.length <= 0) {
+        newTasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+    
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+    
+    console.log(tasks);
+    newTasks.forEach((task) => {
+        const row = document.createElement("tr");
+        
+        row.innerHTML = `
+        <td>${task.name}</td>
+        <td>${task.date}</td>
+        <td>
+        <button class="complete" onclick="completeTask(${task.id})">Complete</button>
+        <button class="edit" onclick="editTask(${task.id})">Edit</button>
+        <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
+        </td>
+        `;
+        
+        taskList.appendChild(row);
+    });
 }
 renderTasks();

@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="homepage/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="homepage/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>My To Do List</h1>
-    
-        <div class="user">
-            <div class="profile">
-                <img src="homepage/profile.png" alt="" width="50px" height="50px">
-                <span class="name" id="username">Theodore Johnson</span>
-            </div>
-            <p>My Score: <span id="score">100</span></p>
+      <h1>My To Do List</h1>
+
+      <div class="user">
+        <div class="profile">
+          <img src="homepage/profile.png" alt="" width="50px" height="50px" />
+          <span class="name" id="username">Theodore Johnson</span>
         </div>
-    
-        <hr>
-    
-        <div class="addTask">
-            <input type="text" id="taskInput" placeholder="Add new...">
-            <input type="date" id="dateInput">
-            <button onclick="addTask()">Add</button>
-        </div>
-    
-        <h2 style="background-color: rgb(255, 221, 68);">Ongoing Tasks</h2>
-        <table id="taskTable">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Deadline</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="taskList" class="taskList">
-            </tbody>
-        </table>
+        <p>My Score: <span id="score">100</span></p>
+      </div>
 
-        <h2 style="background-color: rgb(109, 255, 51);">Completed Tasks</h2>
-        <table id="completedTask">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Deadline</th>
-                    <th>Task Completion Date</th>
-                </tr>
-            </thead>
-            <tbody id="completedList">
-            </tbody>
-        </table>
+      <hr />
 
-        <h2 style="background-color: #ff0000;">Deleted Tasks</h2>
-        <table id="deletedTask">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Deadline</th>
-                </tr>
-            </thead>
-            <tbody id="deletedList">
-            </tbody>
-        </table>
+      <div class="addTask">
+        <input type="text" id="taskInput" placeholder="Add new..." />
+        <input type="date" id="dateInput" />
+        <button onclick="addTask()">Add</button>
+      </div>
 
-        <h2 style="background-color: rgb(82, 204, 255);">Edited Tasks History</h2>
-        <table id="editedTask">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Old Deadline</th>
-                    <th>New Deadline</th>
-                </tr>
-            </thead>
-            <tbody id="editedList">
-            </tbody>
-        </table>
+      <h2 style="background-color: rgb(255, 221, 68)">Ongoing Tasks</h2>
+      <table id="taskTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Deadline</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskList" class="taskList"></tbody>
+      </table>
+
+      <h2 style="background-color: rgb(109, 255, 51)">Completed Tasks</h2>
+      <table id="completedTask">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Deadline</th>
+            <th>Task Completion Date</th>
+          </tr>
+        </thead>
+        <tbody id="completedList"></tbody>
+      </table>
+
+      <h2 style="background-color: #ff0000">Deleted Tasks</h2>
+      <table id="deletedTask">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody id="deletedList"></tbody>
+      </table>
+
+      <h2 style="background-color: rgb(82, 204, 255)">Edited Tasks History</h2>
+      <table id="editedTask">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Old Deadline</th>
+            <th>New Deadline</th>
+          </tr>
+        </thead>
+        <tbody id="editedList"></tbody>
+      </table>
     </div>
 
     <script src="homepage/script.js"></script>
-</body>
+  </body>
 </html>

@@ -50,7 +50,7 @@ function renderTasks() {
                 <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
             </td>
         `;
-    
+
     taskList.appendChild(row);
   });
 }

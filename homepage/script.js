@@ -105,39 +105,52 @@ function deleteTask(id) {
   window.location.reload();
 }
 
-// function editTask(id) {
-//   const newDate = prompt("Enter new deadline (YYYY-MM-DD):");
-//   if (newDate === null || newDate === "") return;
+function editTask(id) {
+  const newDate = prompt("Enter new deadline (YYYY-MM-DD):");
+  if (newDate === null || newDate === "") return;
 
-//   let editedTasks = JSON.parse(localStorage.getItem("edited_tasks"));
-//   if (!editedTasks) {
-//     editedTasks = [];
-//   }
+  let editedTasks = JSON.parse(localStorage.getItem("edited_tasks"));
+  if (!editedTasks) {
+    editedTasks = [];
+  }
 
-//   let task;
-//   for (const t of tasks) {
-//     if (t.id == id) {
-//       task = t;
-//     }
-//   }
+  let task;
+  for (const t of tasks) {
+    if (t.id == id) {
+      task = t;
+    }
+  }
 
-//   if (!task) {
-//     alert("An error occured!");
-//     return;
-//   }
+  if (!task) {
+    alert("An error occured!");
+    return;
+  }
 
-//   const originalTask = { ...task };
-//   task.date = newDate;
-//   editedTasks.push({
-//     ...task,
-//     originalTask: originalTask.name,
-//     originalDate: originalTask.date,
-//     newDate: newDate,
-//   });
+  const originalTask = { ...task };
+  task.date = newDate;
+  editedTasks.push({
+    ...task,
+    originalTask: originalTask.name,
+    originalDate: originalTask.date,
+    newDate: newDate,
+  });
 
-//   localStorage.setItem("edited_tasks", JSON.stringify(editedTasks));
-//   window.location.reload();
-// }
+  localStorage.setItem("edited_tasks", JSON.stringify(editedTasks));
+
+  // update tasks
+  const newTasks = [];
+  for (const onGoingTask of tasks) {
+    if (onGoingTask.id == task.id) {
+      onGoingTask.date = newDate;
+    }
+
+    newTasks.push(onGoingTask);
+  }
+
+  localStorage.setItem("tasks", JSON.stringify(newTasks));
+  // reload
+  window.location.reload();
+}
 
 function renderTasks() {
   if (tasks.length <= 0) {
@@ -204,29 +217,29 @@ function renderDeletedTasks() {
   });
 }
 
-// function renderEditedTasks() {
-//   if (editedTasks.length <= 0) {
-//     editedTasks = JSON.parse(localStorage.getItem("edited_tasks"));
-//   }
+function renderEditedTasks() {
+  if (editedTasks.length <= 0) {
+    editedTasks = JSON.parse(localStorage.getItem("edited_tasks"));
+  }
 
-//   const editedTaskList = document.getElementById("editedTaskList");
-//   editedTaskList.innerHTML = "";
+  const editedTaskList = document.getElementById("editedTaskList");
+  editedTaskList.innerHTML = "";
 
-//   editedTasks.forEach((task) => {
-//     const row = document.createElement("tr");
-//     row.innerHTML = `
-//             <td>${task.originalTask}</td>
-//             <td>${task.originalDate}</td>
-//             <td>${task.newDate}</td>
-//         `;
-//     editedTaskList.appendChild(row);
-//   });
-// }
+  editedTasks.forEach((task) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+            <td>${task.originalTask}</td>
+            <td>${task.originalDate}</td>
+            <td>${task.newDate}</td>
+        `;
+    editedTaskList.appendChild(row);
+  });
+}
 
 function renderAllTasks() {
   renderTasks();
   renderCompletedTasks();
   renderDeletedTasks();
-  // renderEditedTasks();
+  renderEditedTasks();
 }
 renderAllTasks();
